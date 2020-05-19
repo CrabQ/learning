@@ -16,3 +16,22 @@ def my_range(start, stop, step):
         start += step
 
 print(list(my_range(1, 10, 2)))
+
+# send
+def f1():
+    l = []
+    while True:
+        k = yield 'aa'
+        l.append(k)
+        print(l)
+        k = yield 'bb'
+        l.append(k)
+        print(l)
+
+g = f1()
+g.send(None)
+print(g.send('1'))
+print(g.send('2'))
+
+
+
